@@ -1,5 +1,5 @@
 # Lista_Ponteiros
 Integrantes: 
 
--> Adson Emanuel
--> Caio Matheus
+-> Adson Emanuel Santos Amaral 
+-> Caio Matheus Lopes Ribeiro
