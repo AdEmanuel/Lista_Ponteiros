@@ -1,0 +1,8 @@
+aloha[2] = value; É válido
+scanf("%f", &aloha); Não é válido, pois 
+aloha = value"; Não é válido, pois 
+printf("%f", aloha); Não é válido, pois 
+coisas[4][4] = aloha[3]; É válido
+coisas[5] = aloha; Não é válido
+pf = value; Não é válido
+pf = aloha; Válido

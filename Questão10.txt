@@ -1,0 +1,2 @@
+Na questão anterior, a quantidade de memória proposta para cada tipo de variável é diferente da quantidade que é usada na vida real. Logo, os valores de memória são
+diferentes mas a lógica se aplica da mesma forma.

@@ -1,0 +1,8 @@
+p = i; Atribuição legal
+q = &j; Atribuição legal
+p = &*&i; Atribuição ilegal
+i = (*&)j; Atribuição ilegal
+i = *&j; Atribuição 
+i = *&*&j; Atribuição
+q = *p; Atribuição
+i = (*p)++ + *q; Atribuição

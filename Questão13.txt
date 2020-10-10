@@ -1,0 +1,36 @@
+int main() {
+
+    int n,i,j;
+    float *vetor, aux;
+    printf("Informe a quantidade de elementos \n");
+    scanf("%d", &n);
+    vetor = (float*) malloc(n*sizeof(float));
+    printf("Informe os elementos \n");
+
+    for(i=0;i<n;i++){
+        scanf("%f", &vetor[i]);
+    }
+
+    printf("\n");
+
+    //Ordenação
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(vetor[i] > vetor[j]){
+                aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+            }
+        }
+    }
+
+    //Mostra o vetor ordenado
+    for(i=0;i<n;i++){
+        printf("%f \n", vetor[i]);
+    }
+
+
+    free(vetor);
+
+    return 0;
+}
