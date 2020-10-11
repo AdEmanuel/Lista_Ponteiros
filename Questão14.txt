@@ -2,7 +2,7 @@
 eles apontam não podem ser alterados*/
 int comparador(const void *x, const void *y){
     
-/*Os pnteiros passados como parâmetros da função são convertidos para ponteiros para inteiros e têm seu valor resgastado.
+    /*Os pnteiros passados como parâmetros da função são convertidos para ponteiros para inteiros e têm seu valor resgastado.
     Dessa forma, é feita uma subtração entre os valores e a função comparador pode retornar um número igual, maior ou menor
     que zero*/
     return (*(int*)x - *(int*)y);
