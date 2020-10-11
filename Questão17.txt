@@ -1,0 +1,48 @@
+void PreencheVetor(float *vetor, int n){
+    int i;
+    for(i=0;i<n;i++){
+        scanf("%f", &vetor[i]);
+    }
+}
+
+void SomaVetores(float *vetor1, float *vetor2, float *vetorResp, int n){
+    int i;
+    for(i=0;i<n;i++){
+        vetorResp[i] = vetor1[i]+vetor2[i];
+    }
+}
+
+void ImprimeVetor(float *vetor, int n){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%f ", vetor[i]);
+    }
+    printf("\n");
+}
+
+int main (){
+    int n;
+    float *vetor1,*vetor2,*vetorResp;
+
+    printf("Digite a quantidade de elementos que os vetores terão \n");
+    scanf("%d", &n);
+
+    vetor1 = malloc(n*sizeof(float));
+    vetor2 = malloc(n*sizeof(float));
+    vetorResp = malloc(n*sizeof(float));
+
+    printf("Digite os elementos do primeiro vetor \n");
+    PreencheVetor(vetor1,n);
+    printf("Digite os elementos do segundo vetor \n");
+    PreencheVetor(vetor2,n);
+
+    SomaVetores(vetor1,vetor2,vetorResp,n);
+
+    ImprimeVetor(vetorResp,n);
+
+    free(vetor1);
+    free(vetor2);
+    free(vetorResp);
+
+    return 0;
+}
