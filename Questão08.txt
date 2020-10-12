@@ -1,0 +1,2 @@
+O primeiro programa apresenta na tela os valores de cada posição do vetor vet, enquanto o segundo apresenta os valores de endereço de cada posição do vetor vet.
+Essa diferença entre os dois se dá pelo fato de que no primeiro caso, foi utilizado %d na função printf, e o *(vet+i) para acessar o conteúdo das posições. No segundo caso, foi utilizado %x, e o (vet+i) sem o asterisco, então está sendo acessado os endereços das posições do vetor.
