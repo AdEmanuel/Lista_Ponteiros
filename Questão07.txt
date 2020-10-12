@@ -1,0 +1,4 @@
+p = mat + 1;		// É uma expressão válida, pois o p está acessando o endereço das posições do vetor mat, e caminhando 1 unidade (1 byte) em sua memória.
+p = mat++;		// É uma expressão inválida, pois este tipo de incremento(pós-incremento) funciona apenas em números do tipo int e float, e mat é um vetor.
+p = ++mat;		// É uma expressão inválida, pois apesar de possuir uma sintaxe diferente, este tipo de incremento(pré-incremento) possui o mesmo requisito da anterior.
+x = (*mat)++;		// É uma expressão válida, pois o incremento está sendo feito no conteúdo da posição zero do vetor mat, que é um número inteiro, então o incremento pode ser feito normalmente.
