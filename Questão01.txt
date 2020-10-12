@@ -1,0 +1,4 @@
+p == &i;		// o valor retornado é "true", pois o ponteiro p guarda o endereço da variável i, o que torna a comparação verdadeira.
+*p - *q;		// o valor retornado é "-2", pois *p e *q acessam os conteúdos que estão nos endereços i e j, respectivamente. Sendo assim, a operação feita é 3-5, que resulta em -2.
+**&p;			// o valor retornado é "3", pois o ponteiro do ponteiro está acessando o conteúdo do que está contido no endereço de p, que é o valor de i, ou seja, 3.
+3 - *p/(*q) + 7; 	// o valor retornado é "10", pois assim como na expressão 2, os valores acessados são 3 e 5, e quando utilizados, resultam na operação: 3 - (3/5) + 7 => 3 - 0,6 + 7 = 10, pois o valor inteiro de 0,6 é 0.
