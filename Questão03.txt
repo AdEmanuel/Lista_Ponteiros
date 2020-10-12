@@ -1,8 +1,8 @@
 p = i; Atribuição legal
 q = &j; Atribuição legal
 p = &*&i; Atribuição legal
-i = (*&)j; Atribuição ilegal, pois a atribuição "(*&)" que antecede o "j" não está com a sintaxe correta, tendo em vista o posicionamento dos parênteses.
+i = (*&)j; Atribuição ilegal, pois os caracteres "(*&)" que antecedem o "j" não estão com a sintaxe correta, tendo em vista o posicionamento dos parênteses.
 i = *&j; Atribuição legal
 i = *&*&j; Atribuição legal
-q = *p; Atribuição ilegal, pois o uso do asterisco faz com que após o igual se tenha o contéudo para onde o ponteiro aponta, logo não é possível apontar um ponteiro para um valor.
+q = *p; Atribuição ilegal, pois o uso do asterisco faz com que após o igual se tenha o contéudo para onde o ponteiro aponta, logo não é possível apontar um ponteiro para tal conteúdo diretamente.
 i = (*p)++ + *q; Atribuição legal
