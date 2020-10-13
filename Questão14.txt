@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 /*Declara uma função do tipo interiro que está pronta para receber dois ponteiros genéricos, cujos valores para onde
 eles apontam não podem ser alterados*/
 int comparador(const void *x, const void *y){
