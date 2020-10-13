@@ -3,7 +3,7 @@ A geração de números aleatórios ocorreu por meio do uso das funções srand(
 Já a função clock() foi empregada para medir o tempo de execução das funções qsort (nativa da linguagem C) e myqsort (criada por nós, alunos).
 Tendo sido explicitada o contexto do desenvolvimento da questão, foram realizadas 3 medições de tempo diferentes para cada programa. A ordenação contou com 1000 elementos sorteados aleatoriamente entre 0 e 1. 
 O qsrot apresentou os seguintes resultados nas medições: 0, 0 e 0 (valores em milisegundos). Enquanto o myqsort apresentou 7, 5 e 5 (valores em milsegundos).
-Dessa forma, se faz possível conclir que, como já era esperado, a função qsort é mais eficiente para ordenar valores do que a myqsort.
+Dessa forma, se faz possível concluir que, como já era esperado, a função qsort é mais eficiente para ordenar valores do que a myqsort.
 
 Código da questão 14 com as alterações descritas:
 
