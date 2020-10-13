@@ -1,0 +1,123 @@
+Para realização dessa questão foram utilizados dois recursos que antes não estavam presentes nos programas das questões 14 e 15, sendo eles: o uso de números aleatórios e a implementação da função clock().
+A geração de números aleatórios ocorreu por meio do uso das funções srand() e rand() e da constante RAND_MAX. Tais números foram usados para preencher o vetor que viria a ser criado e posteriormente ordenado.
+Já a função clock() foi empregada para medir o tempo de execução das funções qsort (nativa da linguagem C) e myqsort (criada por nós, alunos).
+Tendo sido explicitada o contexto do desenvolvimento da questão, tem-se que foram realizadas 3 medições de tempo diferentes para cada programa. A ordenação contou com 1000 elementos sorteados aleatoriamente entre 0 e 1. 
+O qsrot apresentou os seguintes resultados nas medições: 0, 0 e 0 (valores em milisegundos). Enquanto o myqsort apresentou 7, 5 e 5 (valores em milsegundos).
+Dessa forma, se faz possível conclir que, como já era esperado, a função qsort é mais eficiente para ordenar valores do que a myqsort.
+
+Código da questão 14 com as alterações descritas:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+int comparador(const void *x, const void *y){
+    return (*(int*)x - *(int*)y);
+}
+
+int main(){
+    clock_t t0, tf;
+    int n,i;
+    float *vetor;
+
+    printf("Digite a quant de elementos \n");
+    scanf("%i", &n);
+
+    vetor = (float*) malloc(n*sizeof(float));
+
+    srand(time(NULL));
+    for(i=0;i<n;i++){
+        vetor[i] = rand()/(float)(RAND_MAX+1.0f);
+    }
+
+    for(i=0;i<n;i++){
+        printf("%f \t", vetor[i]);
+    }
+    printf("\n");
+
+    t0 = clock();
+    qsort(vetor,n,sizeof(float),comparador);
+    tf = clock();
+
+    printf("Vetor ordenado de forma crescente: \n");
+    for(i=0;i<n;i++){
+        printf("%f \t", vetor[i]);
+    }
+
+    free(vetor);
+
+    printf("\n");
+    printf(" O tempo em milisegundos foi de: %1f \n", ((double)(tf-t0))/(CLOCKS_PER_SEC/1000));
+    return 0;
+}
+
+Código da questão 15 com as alterações descritas:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+int comparador(float x, float y){
+    if( x > y ){
+        return 1;
+    } else{
+        return 0;
+    }
+}
+
+void myqsort(float *vetor, int n, int (*c) (float,float)){
+    int i,j;
+    float aux;
+
+    //Ordenação
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if((c(vetor[i],vetor[j])) == 1){
+                aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+            }
+        }
+    }
+}
+
+int main(){
+    int n,i;
+    float *vetor;
+    clock_t t0, tf;
+
+    printf("Informe a quantidade de elementos \n");
+    scanf("%d", &n);
+
+    vetor = (float*) malloc(n*sizeof(float));
+
+    srand(time(NULL));
+    for(i=0;i<n;i++){
+        vetor[i] = rand()/(float)(RAND_MAX+1.0f);
+    }
+
+    printf("\n");
+
+    for(i=0;i<n;i++){
+        printf("%.2f \t",vetor[i]);
+    }
+
+    t0 = clock();
+    myqsort(vetor,n,comparador);
+    tf = clock();
+
+
+    //Mostra o vetor ordenado
+    for(i=0;i<n;i++){
+      printf("%f \t", vetor[i]);
+    }
+
+    free(vetor);
+
+    printf("\n");
+    printf(" O tempo em milisegundos foi de: %1f \n", ((double)(tf-t0))/(CLOCKS_PER_SEC/1000));
+
+    return 0;
+} 
