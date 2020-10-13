@@ -1,0 +1,44 @@
+Tendo em vista que um programa é um conjunto de instruções armazenados em uma memória, utilizando funções com o objetivo de tornar o código cada vez mais simples.
+O endereço armazenado na memória para uma função pode ser acessado utilizando uma varivável do tipo ponteiro para função. A partir disso, o ponteiro pode
+referenciar a função, deixando o código mais prático e agil, pois agora pode-se chamar a função em qualquer lugar do programa de uma forma mais simplificada.
+Para a escrita do texto acima, baseei-me em duas publicações, uma do Prof. Márcio Sarroglia Pinho (Disponível em: https://bit.ly/311tXpH.),
+e outra pelo Ivan L. M. Ricarte (Disponível em: https://bit.ly/3iUHC82).
+
+Para exemplificar o uso de ponteiros para funções, desenvolvi um código que calcula o MDC e o MMC entre dois números inteiros de forma recursiva.
+
+#include <stdio.h>
+
+// Função que calcula o MDC recursivamente.
+int mdc(int x, int y){
+    if(x%y == 0)
+        return y;
+    else
+        return mdc(y, x%y);
+}
+
+// Função que calcula o MMC a partir do MDC.
+int mmc(int a, int b){
+    return (a*b)/mdc(a,b);
+}
+
+int main(){
+    
+    int num1, num2, value1, value2;
+    int (*pMDC)(int, int); 	// Indicação de que o ponteiro MDC para inteiro receberá dois valores inteiros como parâmetro.
+    int (*pMMC)(int, int); 	// Indicação igual a anterior, porém para o ponteiro MMC.
+    
+    printf("Escolha o primeiro número:");
+    scanf("%d", &num1);
+    printf("Escolha o segundo número:");
+    scanf("%d", &num2);
+    
+    pMDC = mdc; 	// Ponteiro pMDC apontando para a função MDC.
+    value1 = pMDC(num1,num2); 	// value1 recebendo o valor da função apontada por pMDC.
+    printf("\n O MDC entre os números é: %d ", value1);
+    
+    pMMC = mmc; 	// Ponteiro pMMC apontando para a função MMC.
+    value2 = pMMC(num1,num2); 	// value2 recebendo o valor da função apontada por pMMC.
+    printf("\n O MMC entre os números é: %d ", value2);
+
+    return 0;
+}
