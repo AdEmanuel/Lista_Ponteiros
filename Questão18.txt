@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int **AlocaMatriz(int nl, int nc){
     int i,j, **matriz;
 
@@ -42,7 +45,6 @@ void MultiplicacaoMatricial(int **matrizA, int **matrizB, int **matrizC,int nlA,
 }
 
 int main(){
-
     int nlA,ncA,ncB;
     printf("Informe, respectivamente, a quant. de linhas e colunas da primeira matriz \n");
     scanf("%i%i", &nlA,&ncA);
